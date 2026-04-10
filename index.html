@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <title>Landscape Design | Living Art</title>
+    <style>
+        :root {
+            --stone: #4a4e4d;
+            --leaf: #2f4538;
+            --earth: #9a8c73;
+            --sky: #f4f7f6;
+            --white: #ffffff;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif; /* Elegant serif for landscape feel */
+        }
+
+        body {
+            background-color: var(--sky);
+            color: var(--stone);
+            line-height: 1.7;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Nav */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            font-weight: bold;
+            color: var(--leaf);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--stone);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--earth); }
+
+        /* Section 1: Hero */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('https://images.pexels.com/photos/158028/bellingrath-gardens-alabama-landscape-scenic-158028.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 400; margin-bottom: 20px; }
+        .hero p { font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; }
+
+        /* Section 2: Design Philosophies */
+        .philosophy { padding: 100px 10%; background: var(--white); text-align: center; }
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .phi-item h3 { color: var(--leaf); margin-bottom: 15px; font-size: 1.4rem; }
+        .phi-item p { color: #666; font-size: 0.95rem; }
+
+        /* Section 3: Project Gallery */
+        .gallery { padding: 100px 5%; background: #f9f9f9; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item {
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(47, 69, 56, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-item:hover { transform: scale(0.98); }
+
+        /* Section 4: Sustainability */
+        .sustainability {
+            padding: 100px 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: var(--leaf);
+            color: var(--white);
+        }
+        .sus-content h2 { font-size: 2.5rem; margin-bottom: 25px; }
+        .sus-image {
+            height: 500px;
+            background: url('https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover;
+            border-radius: 5px;
+        }
+
+        footer {
+            padding: 80px 10%;
+            background: var(--stone);
+            color: #ccc;
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .hr-line {
+            width: 50px;
+            height: 2px;
+            background: var(--earth);
+            margin: 20px auto;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .sustainability { grid-template-columns: 1fr; }
+            .sus-image { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">TERRA FORMS</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Philosophy</a></li>
+            <li><a href="#gallery">Portfolio</a></li>
+            <li><a href="#eco">Sustainability</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <h1>Harmonizing Nature & Design</h1>
+        <p>Architecting the spaces where life happens.</p>
+    </header>
+
+    <section class="philosophy" id="about">
+        <h2 style="font-size: 2rem;">Our Approach</h2>
+        <div class="hr-line"></div>
+        <div class="philosophy-grid">
+            <div class="phi-item">
+                <h3>Ecological Balance</h3>
+                <p>Prioritizing native species and biodiversity to create self-sustaining environments that thrive with minimal intervention.</p>
+            </div>
+            <div class="phi-item">
+                <h3>Functional Art</h3>
+                <p>We believe a landscape should be as usable as it is beautiful, blending hardscape and softscape into seamless living areas.</p>
+            </div>
+            <div class="phi-item">
+                <h3>Timeless Materiality</h3>
+                <p>Using natural stone, timber, and water elements that age gracefully and anchor the home to its site.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <h2 style="text-align: center; margin-bottom: 40px;">Featured Environments</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/1450008/pexels-photo-1450008.jpeg?auto=compress&cs=tinysrgb&w=600')">
+                <div class="gallery-overlay">
+                    <h4>The Zen Courtyard</h4>
+                    <p>Minimalist stone paths meets flowing water.</p>
+                </div>
+            </div>
+            <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg?auto=compress&cs=tinysrgb&w=600')">
+                <div class="gallery-overlay">
+                    <h4>Alpine Retreat</h4>
+                    <p>Structured tiered gardening for mountainous terrain.</p>
+                </div>
+            </div>
+            <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/208321/pexels-photo-208321.jpeg?auto=compress&cs=tinysrgb&w=600')">
+                <div class="gallery-overlay">
+                    <h4>Modern Estate</h4>
+                    <p>Symmetry and geometric hardscaping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sustainability" id="eco">
+        <div class="sus-content">
+            <h2>Future-Proof Landscapes</h2>
+            <p>Our designs focus on water conservation through smart irrigation and xeriscaping techniques. By understanding the local climate, we ensure your outdoor space remains resilient against environmental shifts.</p>
+            <br>
+            <p>From permeable paving that reduces runoff to soil health restoration, we build gardens that give back to the planet.</p>
+        </div>
+        <div class="sus-image"></div>
+    </section>
+
+    <footer>
+        <p>GENERAL LANDSCAPE DESIGN INFORMATIVE PORTAL</p>
+        <div class="hr-line" style="background: #555;"></div>
+        <p>&copy; 2026. Generic Industry Insights. No Affiliation with specific entities.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple Fade-in effect on scroll
+        window.addEventListener('scroll', () => {
+            const items = document.querySelectorAll('.phi-item');
+            items.forEach(item => {
+                const speed = 0.5;
+                const rect = item.getBoundingClientRect();
+                if(rect.top < window.innerHeight) {
+                    item.style.opacity = "1";
+                    item.style.transform = "translateY(0)";
+                }
+            });
+        });
+
+        // Initialize state for items
+        document.querySelectorAll('.phi-item').forEach(item => {
+            item.style.opacity = "0";
+            item.style.transform = "translateY(30px)";
+            item.style.transition = "all 0.8s ease-out";
+        });
+    </script>
+</body>
+</html>
